@@ -1,47 +1,44 @@
-Entendendo o Desafio
- 
-Agora é a sua hora de brilhar e construir um perfil de destaque na DIO! Explore todos os conceitos explorados até aqui e replique (ou melhore, porque não?) este projeto prático. Para isso, crie seu próprio repositório e aumente ainda mais seu portfólio de projetos no GitHub, o qual pode fazer toda diferença em suas entrevistas técnicas 😎
- 
-Neste repositório, insira todos os links e arquivos necessários para seu projeto, seja um arquivo de banco de dados ou um link para o template no Figma.
- 
-Dica: Se o expert forneceu um repositório Github, você pode dar um "fork" no repositório dele para organizar suas alterações e evoluções mantendo uma referência direta ao código-fonte original.
- 
-Instruções para entrega
-# 3️⃣ Escrevendo as classes de um Jogo
+// Definindo a classe Heroi
+class Heroi {
+  // Construtor para inicializar as propriedades do herói
+  constructor(nome, idade, tipo) {
+    this.nome = nome;
+    this.idade = idade;
+    this.tipo = tipo;
+  }
 
-**O Que deve ser utilizado**
+  // Método atacar para exibir o ataque conforme o tipo do herói
+  atacar() {
+    let ataque;
 
-- Variáveis
-- Operadores
-- Laços de repetição
-- Estruturas de decisões
-- Funções
-- Classes e Objetos
+    // Verificando o tipo do herói e definindo o ataque
+    if (this.tipo === 'mago') {
+      ataque = 'usou magia';
+    } else if (this.tipo === 'guerreiro') {
+      ataque = 'usou espada';
+    } else if (this.tipo === 'monge') {
+      ataque = 'usou artes marciais';
+    } else if (this.tipo === 'ninja') {
+      ataque = 'usou shuriken';
+    } else {
+      ataque = 'usou um ataque desconhecido';
+    }
 
-## Objetivo:
+    // Exibindo a mensagem de ataque
+    console.log(`O ${this.tipo} atacou usando ${ataque}`);
+  }
+}
 
-Crie uma classe generica que represente um herói de uma aventura e que possua as seguintes propriedades:
+// Exemplo de uso da classe Heroi
 
-- nome
-- idade
-- tipo (ex: guerreiro, mago, monge, ninja )
+// Criando heróis
+const heroi1 = new Heroi('Merlin', 30, 'mago');
+const heroi2 = new Heroi('Arthur', 35, 'guerreiro');
+const heroi3 = new Heroi('Lee', 28, 'monge');
+const heroi4 = new Heroi('Naruto', 20, 'ninja');
 
-além disso, deve ter um método chamado atacar que deve atender os seguientes requisitos:
-
-- exibir a mensagem: "o {tipo} atacou usando {ataque}")
-- aonde o {tipo} deve ser concatenando o tipo que está na propriedade da classe
-- e no {ataque} deve seguir uma descrição diferente conforme o tipo, seguindo a tabela abaixo:
-
-se mago -> no ataque exibir (usou magia)
-se guerreiro -> no ataque exibir (usou espada)
-se monge -> no ataque exibir (usou artes marciais)
-se ninja -> no ataque exibir (usou shuriken)
-
-## Saída
-
-Ao final deve se exibir uma mensagem:
-
-- "o {tipo} atacou usando {ataque}"
-  ex: mago atacou usando magia
-  guerreiro atacou usando espada
- 
+// Exibindo os ataques dos heróis
+heroi1.atacar();  // O mago atacou usando magia
+heroi2.atacar();  // O guerreiro atacou usando espada
+heroi3.atacar();  // O monge atacou usando artes marciais
+heroi4.atacar();  // O ninja atacou usando shuriken
